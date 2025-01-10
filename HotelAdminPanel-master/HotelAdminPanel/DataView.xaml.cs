@@ -45,5 +45,12 @@ namespace HotelAdminPanel
             adminPage.Show();
             Window.GetWindow(this)?.Close();
         }
+
+        private void ratingsbtn_Click(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = null;
+            Database database = new Database();
+            database.LoadRatingsToDataGrid(dataGrid);
+        }
     }
 }

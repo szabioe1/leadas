@@ -13,7 +13,7 @@
             <Button x:Name="bookingsbtn" Content="Bookings" Height="40" Margin="0,0,0,10"
                     Background="#4CAF50" Foreground="White" FontWeight="Bold" BorderBrush="#388E3C" BorderThickness="1" Click="bookingsbtn_Click"/>
             <Button x:Name="ratingsbtn" Content="Ratings" Height="40" Margin="0,0,0,10"
-                    Background="#2196F3" Foreground="White" FontWeight="Bold" BorderBrush="#1976D2" BorderThickness="1"/>
+                    Background="#2196F3" Foreground="White" FontWeight="Bold" BorderBrush="#1976D2" BorderThickness="1" Click="ratingsbtn_Click"/>
             <Button x:Name="amenitiesbtn" Content="Amenities" Height="40"
                     Background="#FFC107" Foreground="White" FontWeight="Bold" BorderBrush="#FFA000" BorderThickness="1" Click="amenitiesbtn_Click"/>
             

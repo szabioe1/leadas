@@ -169,6 +169,42 @@ namespace HotelAdminPanel
                 MessageBox.Show($"Error loading bookings: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        public void LoadRatingsToDataGrid(DataGrid dataGrid)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = @"
+                SELECT 
+                hotels.id AS HotelID,
+                ratings.rating AS Rating,
+                ratings.date AS Date,
+                users.firstname AS UserID
+            FROM ratings
+            LEFT JOIN hotels ON ratings.hotel_id = hotels.id
+            LEFT JOIN users ON ratings.user_id = users.id;
+";
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+
+                        adapter.Fill(dataTable);
+
+                        dataGrid.ItemsSource = dataTable.DefaultView;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading ratings: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
         public void LoadAmenitiesToDataGrid(DataGrid dataGrid)
         {
             try
