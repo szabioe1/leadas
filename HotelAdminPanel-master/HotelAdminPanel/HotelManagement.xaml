@@ -1,0 +1,68 @@
+﻿<Window x:Class="HotelAdminPanel.HotelManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelAdminPanel"
+        mc:Ignorable="d"
+        Title="Hotel Management" Height="500" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,6,0,-6" Background="#F4F4F4">
+        <!-- Text Inputs -->
+        <TextBox x:Name="hotelName" HorizontalAlignment="Left" Margin="57,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="27" 
+                 BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Padding="5"/>
+        <TextBox x:Name="city" HorizontalAlignment="Left" Margin="57,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="27" 
+                 BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Padding="5"/>
+        <TextBox x:Name="price" HorizontalAlignment="Left" Margin="57,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="27" 
+                 BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Padding="5"/>
+        <ComboBox x:Name="payment" HorizontalAlignment="Left" Margin="57,216,0,0" VerticalAlignment="Top" Width="150" 
+                  BorderBrush="#CCCCCC" BorderThickness="1" Background="White">
+            <ComboBoxItem>Card</ComboBoxItem>
+            <ComboBoxItem>Cash</ComboBoxItem>
+            <ComboBoxItem>Both</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="coords" HorizontalAlignment="Left" Margin="57,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="27" 
+                 BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Padding="5"/>
+        <TextBox x:Name="class" HorizontalAlignment="Left" Margin="57,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="27" 
+                 BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Padding="5"/>
+        <TextBox x:Name="description" HorizontalAlignment="Left" Margin="57,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="60" 
+                 BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Padding="5"/>
+
+        <!-- Labels -->
+        <Label Content="Hotel Name" HorizontalAlignment="Left" Margin="57,31,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#333333"/>
+        <Label Content="City" HorizontalAlignment="Left" Margin="57,86,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#333333"/>
+        <Label Content="Price (per night)" HorizontalAlignment="Left" Margin="57,139,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#333333"/>
+        <Label Content="Payment Options" HorizontalAlignment="Left" Margin="57,193,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#333333"/>
+        <Label Content="Coordinates" HorizontalAlignment="Left" Margin="57,247,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#333333"/>
+        <Label Content="Class (1-5)" HorizontalAlignment="Left" Margin="57,302,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#333333"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="57,357,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Foreground="#333333"/>
+
+        <!-- Buttons -->
+        <Button x:Name="addHotelBtn" Content="Add Hotel" HorizontalAlignment="Left" Margin="427,416,0,0" Width="112" Height="39" VerticalAlignment="Top" 
+                Background="#4CAF50" Foreground="White" FontWeight="Bold" BorderBrush="#388E3C" BorderThickness="1" Click="addHotelBtn_Click" />
+        <Button x:Name="updateHotelBtn" Content="Update Hotel" HorizontalAlignment="Left" Margin="544,416,0,0" Width="112" Height="38" VerticalAlignment="Top" 
+                Background="#2196F3" Foreground="White" FontWeight="Bold" BorderBrush="#1976D2" BorderThickness="1" />
+        <Button x:Name="deleteHotelBtn" Content="Remove Hotel" HorizontalAlignment="Left" Margin="661,416,0,0" Width="112" Height="38" VerticalAlignment="Top" 
+                Background="#F44336" Foreground="White" FontWeight="Bold" BorderBrush="#D32F2F" BorderThickness="1" Click="deleteHotelBtn_Click" />
+
+        <Grid Margin="190,3,0,0" Height="60" VerticalAlignment="Top">
+            <Label Content="Search for:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="#333333"/>
+            <ComboBox x:Name="searchsel" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" Width="150"
+      BorderBrush="#CCCCCC" BorderThickness="1" Background="White"/>
+            <TextBox x:Name="searchbox" HorizontalAlignment="Left" Margin="270,0,0,0" VerticalAlignment="Center" Width="200" Height="30"
+     BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Padding="5"/>
+            <Button x:Name="searchbtn" Content="Search" HorizontalAlignment="Left" Margin="480,0,0,0" VerticalAlignment="Center" Width="80" Height="30"
+    Background="#4CAF50" Foreground="White" FontWeight="Bold" BorderBrush="#388E3C" BorderThickness="1" Click="searchbtn_Click"/>
+            <Button x:Name="resetbtn" Content="Reset" HorizontalAlignment="Left" Margin="565,0,0,0" VerticalAlignment="Center" Background="#F44336" Foreground="White" FontWeight="Bold" BorderBrush="#D32F2F" BorderThickness="1" Height="30" Click="resetbtn_Click"/>
+            <Label Content="Picture of Hotel" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="688,0,0,0" VerticalAlignment="Center" Width="201"/>
+
+        </Grid>
+
+        <!-- DataGrid -->
+        <DataGrid x:Name="hotelsData" Margin="246,63,411,81" BorderBrush="#CCCCCC" BorderThickness="1" Background="White" 
+                  RowBackground="White" AlternatingRowBackground="#F9F9F9" GridLinesVisibility="Horizontal" SelectionChanged="hotelsData_SelectionChanged"/>
+        <Button x:Name="backbtn" Content="&lt;--Back" HorizontalAlignment="Left" Margin="10,0,0,0" Width="85" Height="26" VerticalAlignment="Top" 
+    Background="#F44336" Foreground="White" FontWeight="Bold" BorderBrush="#D32F2F" BorderThickness="1" Click="backbtn_Click"/>
+        <Image x:Name="imgsrc" HorizontalAlignment="Left" Height="334" Margin="815,63,0,0" VerticalAlignment="Top" Width="343"/>
+    </Grid>
+</Window>

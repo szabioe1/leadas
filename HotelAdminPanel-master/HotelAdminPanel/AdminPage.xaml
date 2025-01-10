@@ -1,0 +1,26 @@
+﻿<Window x:Class="HotelAdminPanel.AdminPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelAdminPanel"
+        mc:Ignorable="d"
+        Title="Admin Page" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#F4F4F4">
+        <Label Content="Üdvözöljük!" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" 
+               Width="264" Height="51" FontSize="30" FontWeight="Bold" Foreground="#333333"/>
+        <Label Content="Hotel Admin Panel" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" 
+               Width="314" Height="51" FontSize="30" FontWeight="Bold" Foreground="#555555"/>
+
+        <Button x:Name="usermg" Content="Felhasználó Management" HorizontalAlignment="Center" Margin="0,113,0,0" VerticalAlignment="Top" 
+                Width="222" Height="46" FontSize="16" FontWeight="Bold" Foreground="White" Background="#4CAF50" 
+                BorderBrush="#388E3C" BorderThickness="1" Click="usermg_Click"/>
+        <Button x:Name="hotelmg" Content="Hotel Management" HorizontalAlignment="Center" Margin="0,164,0,0" VerticalAlignment="Top" 
+                Width="222" Height="46" FontSize="16" FontWeight="Bold" Foreground="White" Background="#2196F3" 
+                BorderBrush="#1976D2" BorderThickness="1" Click="hotelmg_Click"/>
+        <Button x:Name="datamg" Content="Adatok" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" 
+                Width="222" Height="46" FontSize="16" FontWeight="Bold" Foreground="White" Background="#FF9800" 
+                BorderBrush="#F57C00" BorderThickness="1" Click="datamg_Click"/>
+    </Grid>
+</Window>
